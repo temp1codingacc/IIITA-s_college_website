@@ -5,7 +5,7 @@ Welcome to the College Event Management System, a comprehensive platform designe
 ## Features
 
 ### 1. Home Page
-![Home Page](assets/images/website_images/readMe_home)
+![readMe_home](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/b9a3705a-3803-4d49-93cf-693109387760)
 - The welcoming page displayed after login, featuring vibrant images and comprehensive information about the college.
 - Highlights the college’s infrastructure, academic achievements, and extracurricular activities.
 
