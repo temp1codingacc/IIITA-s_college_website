@@ -16,9 +16,9 @@ Welcome to the College Event Management System, a comprehensive platform designe
 - Easy-to-navigate calendar view for quick reference.
 
 ### 3. Sports
-![Sports Section](./assets/images/website_images/sports_running)
-![Alt text](./assets/images/website_images/sports_scorecard)
-![Alt text](./assets/images/website_images/sports_home)
+![sports_running](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/61c41bfa-119e-4482-bb63-f65137cfab0a)
+![sports_scorecard](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/23944264-3da4-42b0-96bb-14edc74fbba8)
+![sports_home](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/3632e798-176e-434d-bf1d-09b088eb5734)
 - Get real-time updates on ongoing sports events and team information.
 - Features running scores, detailed scorecards, and venue information.
 - Supports various sports activities, encouraging student participation and engagement.
