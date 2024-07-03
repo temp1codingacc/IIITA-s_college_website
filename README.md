@@ -10,7 +10,7 @@ Welcome to the College Event Management System, a comprehensive platform designe
 - Highlights the college’s infrastructure, academic achievements, and extracurricular activities.
 
 ### 2. Event Calendar
-![Event Calendar](./assets/images/website_images/readMe_Calendar)
+![readMe_Calendar](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/3c95a145-e5d3-44e5-8053-8d65eb39c319)
 - Stay updated with all the important dates and times of college events.
 - Includes end-semester examination dates, holidays, festival dates, and more.
 - Easy-to-navigate calendar view for quick reference.
