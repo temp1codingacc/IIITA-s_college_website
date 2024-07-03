@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.event {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.event h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event p {
+  color: #666;
+  margin-bottom: 5px;
+}
+
+/* Styles for menu icon */
+.menu-icon {
+  display: inline-flex; /* Display menu icon and logo in the same line */
+  align-items: center; /* Align items vertically */
+  margin-right: 20px; /* Add some space between the menu icon and logo */
+}
+
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Navigation Styles */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.715);
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation li {
+  margin-top: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.add-event-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.add-event-form input[type="text"],
+.add-event-form input[type="date"],
+.add-event-form input[type="time"],
+.add-event-form textarea {
+  width: calc(50% - 11px);
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.add-event-form textarea {
+  width: calc(100% - 22px);
+}
+
+.add-event-form::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.add-event-form input[type="submit"] {
+  background-color: #4a5c03;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.add-event-form input[type="submit"]:hover {
+  background-color: #375003;
+}
+
+.delete-button {
+  background-color: #9b0404;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
+}
+
+.delete-button:hover {
+  background-color: #750303;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000; /* Ensure the header stays above other content */
+}

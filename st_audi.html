@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditorium Events</title>
+    <link rel="stylesheet" href="./assets/audi.css">
+    <style>
+        .add-event-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .add-event-form input[type="date"],
+        .add-event-form input[type="time"] {
+            width: calc(50% - 11px);
+            float: left;
+            margin-right: 10px;
+        }
+
+        .add-event-form::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .delete-button {
+            background-color: #9b0404;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .delete-button:hover {
+            background-color: #750303;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="./assets/menu.png " alt="Menu">
+        </div>
+        <nav class="navigation" id="nav">
+            <ul>
+                <li><a href="./st_home.html" class="btn">Home</a></li>
+                <li><a href="./st_calendar.html" class="btn">Event Calendar</a></li>
+                <li><a href="./st_sports.html" class="btn">Sports</a></li>
+                <li><a href="./st_audi.html" class="btn">Auditorium Events</a></li>
+                <li><a href="./st_news.html" class="btn">News & Announcements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Auditorium Events</h1>
+        <div id="events-container"></div>
+    </div>
+    <div class="container">
+        <div class="add-event-form">
+            
+        </div>
+    </div>
+
+    <script>
+        let events = JSON.parse(localStorage.getItem('events')) || [];
+
+        function renderEvents() {
+            const eventsContainer = document.getElementById('events-container');
+            eventsContainer.innerHTML = '';
+
+            events.forEach((event, index) => {
+                const formattedDate = convertDate(event.date);
+                const eventElement = document.createElement('div');
+                eventElement.classList.add('event');
+                eventElement.innerHTML = `
+                    <h2>${event.name}</h2>
+                    <p>Date: ${formattedDate}</p>
+                    <p>Time: ${event.time}</p>
+                    <p>Description: ${event.description}</p>
+                    
+                `;
+                eventsContainer.appendChild(eventElement);
+            });
+        }
+
+        
+
+        function convertDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            const menuIcon = document.querySelector('.menu-icon');
+            const isOpen = nav.style.left === '0px';
+            
+            if (isOpen) {
+                nav.style.left = '-300px';
+                menuIcon.classList.remove('open');
+            } else {
+                nav.style.left = '0';
+                menuIcon.classList.add('open');
+            }
+        }
+
+        // Close menu if clicked outside of it
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('nav');
+            const menuIcon = document.querySelector('.menu-icon');
+            const isClickInsideNav = nav.contains(event.target) || menuIcon.contains(event.target);
+            const isOpen = nav.style.left === '0px';
+            
+            if (!isClickInsideNav && isOpen) {
+                nav.style.left = '-300px';
+                menuIcon.classList.remove('open');
+            }
+        });
+
+        renderEvents();
+    </script>
+</body>
+</html>

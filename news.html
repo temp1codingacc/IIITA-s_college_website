@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News and Announcements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a6a6a6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      color: black;
+      text-align: center;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Updated style for the heading */
+    header h1 {
+      font-size: 20px;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 15px;
+    }
+
+    .news {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #eeecec;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .news h2 {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .add-news-form input[type="text"],
+    .add-news-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .add-news-form input[type="submit"] {
+      background-color: #4a5c03;
+      color: rgb(213, 211, 211);
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .delete-button {
+      background-color: #9b0404;
+      color: rgb(224, 222, 222);
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Styles for menu icon */
+    /* Header Styles */
+.header {
+  background-color: #4a5c03;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styles for menu icon */
+.menu-icon {
+  display: inline-flex; /* Display menu icon and logo in the same line */
+  align-items: center; /* Align items vertically */
+  margin-right: 20px; /* Add some space between the menu icon and logo */
+  margin-left: 20px;
+}
+
+.menu-icon img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+/* Navigation Styles */
+.navigation {
+  position: fixed;
+  top: 0;
+  left: -300px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #007bff;
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.navigation ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.navigation li {
+  margin-top: 20px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.nav-buttons a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-buttons a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="./assets/menu.png" alt="Menu">
+    </div>
+    <h2>Welcome to News and Announcements</h2>
+    <div class="nav-buttons">
+        <a href="./contact.html">Contact Us</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="./login.html" onclick="disableBackButton()">Logout</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+    <nav class="navigation" id="nav">
+        <ul>
+            <li><a href="./home_main.html" class="btn">Home</a></li>
+            <li><a href="./calendar.html" class="btn">Event Calendar</a></li>
+            <li><a href="./sports.html" class="btn">Sports</a></li>
+            <li><a href="./audi.html" class="btn">Auditorium Events</a></li>
+            <li><a href="./news.html" class="btn">News & Announcements</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+  function disableBackButton() {
+
+    window.history.pushState(null, "", window.location.href);
+    window.onpopstate = function() {
+        window.history.pushState(null, "", window.location.href);
+    };
+
+    $("#message").text("Successfully!, Browser back button disabled").delay(2000).fadeOut(1000);
+  }
+  function toggleMenu() {
+    const nav = document.getElementById('nav');
+    const menuIcon = document.querySelector('.menu-icon');
+    const isOpen = nav.style.left === '0px';
+    
+    if (isOpen) {
+        nav.style.left = '-300px';
+        menuIcon.classList.remove('open');
+    } else {
+        nav.style.left = '0';
+        menuIcon.classList.add('open');
+    }
+  }
+
+  // Close menu if clicked outside of it
+  document.addEventListener('click', function(event) {
+    const nav = document.getElementById('nav');
+    const menuIcon = document.querySelector('.menu-icon');
+    const isClickInsideNav = nav.contains(event.target) || menuIcon.contains(event.target);
+    const isOpen = nav.style.left === '0px';
+    
+    if (!isClickInsideNav && isOpen) {
+        nav.style.left = '-300px';
+        menuIcon.classList.remove('open');
+    }
+  });
+</script>
+
+  <div class="container">
+    <div id="news-container"></div>
+
+    <div class="add-news-form">
+      <h2>Add News</h2>
+      <input type="text" id="title" placeholder="Title">
+      <textarea id="content" placeholder="Content"></textarea>
+      <input type="submit" value="Add News" onclick="addNews()">
+    </div>
+  </div>
+
+  <script>
+    let newsArticles = JSON.parse(localStorage.getItem('newsArticles')) || [];
+
+    function renderNews() {
+      const newsContainer = document.getElementById('news-container');
+      newsContainer.innerHTML = '';
+
+      newsArticles.forEach((article, index) => {
+        const newsElement = document.createElement('div');
+        newsElement.classList.add('news');
+        newsElement.innerHTML = `
+          <h2>${article.title}</h2>
+          <p>${article.content}</p>
+          <button class="delete-button" onclick="deleteNews(${index})">Delete</button>
+        `;
+        newsContainer.appendChild(newsElement);
+      });
+    }
+
+    function addNews() {
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+
+      if (title && content) {
+        newsArticles.push({ title, content });
+        localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
+        renderNews();
+        document.getElementById('title').value = '';
+        document.getElementById('content').value = '';
+      } else {
+        alert('Please enter title and content for the news.');
+      }
+    }
+
+    function deleteNews(index) {
+      newsArticles.splice(index, 1);
+      localStorage.setItem('newsArticles', JSON.stringify(newsArticles));
+      renderNews();
+    }
+
+    renderNews();
+  </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/assets/login.css">
+</head>
+<body onload="disableBackButton()">
+    <div class="wrapper">
+        <h1>Login</h1>
+        <div class="input-box">
+            <label for="UserType">User Type:</label>
+            <select id="UserType">
+                <option value="admin">Admin</option>
+                <option value="student">Student</option>
+            </select>
+        </div>
+      
+        <div class="input-box">
+            <label for="Email">Email:</label>
+            <input type="email" placeholder="Email" id="Email" required>
+        </div>
+        <div class="input-box">
+            <label for="Password">Password:</label>
+            <input type="password" placeholder="Password" id="Password" required>
+        </div>
+        <button type="button" class="btn" id="submit">Login</button>
+    </div>
+
+    <script src="./app/login.js" type="module"></script>
+    <script>
+        function disableBackButton() {
+            window.history.pushState(null, "", window.location.href);
+            window.onpopstate = function() {
+                window.history.pushState(null, "", window.location.href);
+            };
+        }
+    </script>
+</body>
+</html>

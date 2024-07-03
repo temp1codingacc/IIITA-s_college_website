@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indian Institute of Information Technology, Allahabad</title>
+    <link rel="stylesheet" href="./assets/home_main.css">
+</head>
+<body onload="disableBackButton()">
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <img src="./assets/menu.png" alt="Menu">
+        </div>
+        <h2>IIITA</h2>
+        <div class="nav-buttons">
+            <a href="./about.html">About Us</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="./contact.html">Contact Us</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="./login.html">Logout</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <nav class="navigation" id="nav">
+            <ul>
+                <li><a href="./st_home.html" class="btn">Home</a></li>
+                <li><a href="./st_calendar.html" class="btn">Event Calendar</a></li>
+                <li><a href="./st_sports.html" class="btn">Sports</a></li>
+                <li><a href="./st_audi.html" class="btn">Auditorium Events</a></li>
+                <li><a href="./st_news.html" class="btn">News & Announcements</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Welcome to Indian Institute of Information Technology, Allahabad</h1>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="./assets/college_img.jpeg" alt="College Building">
+                <div class="text">Our Campus</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="./assets/audi.jpg" alt="Auditorium">
+                <div class="text">Auditorium</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="./assets/main_page.jpg" alt="Main Building">
+                <div class="text">Main Building</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="./assets/ground.jpeg" alt="Sports Ground">
+                <div class="text">Sports Ground</div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <p>The Indian Institute of Information Technology, Allahabad (IIITA), nestled in the historic city of Allahabad, is a premier institute of higher education and research in the field of information technology. Established in 1999 as a center of excellence in IT and allied areas, IIITA has consistently strived to foster innovation, academic excellence, and research prowess. With state-of-the-art infrastructure, world-class faculty, and a vibrant student community, IIITA offers a conducive environment for holistic development and learning. Committed to nurturing future leaders and innovators, the institute emphasizes interdisciplinary education and research, preparing its graduates to tackle the challenges of the rapidly evolving digital landscape. As a pioneering institution in IT education, IIITA continues to make significant contributions to the advancement of knowledge and technology, shaping the future of India's IT industry and beyond.</p>
+    </div>
+    <script src="./app/home_main.js"></script>
+    <script>
+        function disableBackButton() {
+            window.history.pushState(null, "", window.location.href);
+            window.onpopstate = function() {
+                window.history.pushState(null, "", window.location.href);
+            };
+        }
+    </script>
+</body>
+</html>
