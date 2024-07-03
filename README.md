@@ -24,7 +24,7 @@ Welcome to the College Event Management System, a comprehensive platform designe
 - Supports various sports activities, encouraging student participation and engagement.
 
 ### 4. Auditorium Events
-![Auditorium Events](../assets/images/website_images/auditorium)
+![auditorium](https://github.com/temp1codingacc/IIITA-s_college_website/assets/171582799/05b71052-1f8a-4cc9-b02a-fc7f9105f275)
 - Discover exciting events happening in the college auditorium.
 - Example Event: DJ Night
   - **Date:** June 24, 2024
@@ -39,6 +39,31 @@ Welcome to the College Event Management System, a comprehensive platform designe
 ## Overview
 
 Our system ensures that students and staff are always in the loop, promoting active participation and fostering a sense of community within the college. Whether you're looking for event schedules, sports updates, or the latest news, our platform has got you covered.
+
+## Login Credentials
+
+### Admin
+- **Username:** hemanth@gmail.com
+- **Password:** 12345678
+
+### Student
+- **Username:** iit2022240@iiita.ac.in
+- **Password:** 123456
+
+## How to Run the Project
+
+### Prerequisites
+- Ensure you have a web server set up. You can use any web server like Apache, Nginx, or a simple live server extension in Visual Studio Code.
+
+### Steps
+1. Clone the repository or download the project files.
+2. Open the project folder in Visual Studio Code.
+3. Install the Live Server extension in Visual Studio Code if you haven't already.
+4. Right-click on `login.html` and select `Open with Live Server`.
+5. The project should now be running, and you can access it in your browser.
+
+## Contact
+For any queries or further information, please contact [hemanth@gmail.com](mailto:hemanth@gmail.com).
 
 ---
 
